@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+        <title>
+            
+                <asp:ContentPlaceHolder id="title" runat="server">
+
+
+    </asp:ContentPlaceHolder>
+        </title>    
+                     <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link href="bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script src="bootstrap-3.3.7/js/tests/vendor/jquery.min.js"></script>
+        <link href="/Style/StyleSheet.css" rel="stylesheet" />
+    <script src="Script/JavaScript.js"></script>
+    <link rel="shortcut icon" href="images/logoEEA.png" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            
+            $("#smoth a").on('click', function (event) {
+
+                
+                if (this.hash !== "") {
+                    
+                    event.preventDefault();
+
+                   
+                    var hash = this.hash;
+
+                    
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 600, function () {
+
+                        
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+</script>
+    <form id="form1" runat="server">
+    <div class="container-fluid set">
+        <div class="col-md-12 set">
+            <div class="Banner">
+                <div class="navigate">
+
+                    <div class="logo nav_prop active ">
+                        <div class="icon_container" onclick="myFunction(this)" >
+                          <div class="bar1"></div>
+                          <div class="bar2"></div>
+                          <div class="bar3"></div>
+                        </div>
+                        
+
+                    </div>
+                    <div class="name nav_prop"><h4><span class="change"><a href="Default.aspx" style="color:#222;"><span id="easy">Easy</span> <span id="eng">Engineering</span> <span id="acad">Academy</span></a> </span></h4></div>
+                    <div class="bar nav_prop">
+
+                        <ul id="behide" class="view">
+                            <li><a href="Login.aspx" target="_blank">Login</a></li>
+                            <li><a href="Contact.aspx">contact</a></li>
+                            <li><a href="Default.aspx">Courses</a></li>                            
+                            <li><a href="Registration.aspx">Registraion</a></li>
+                            <li><a href="Default.aspx">home</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="stiker" style="min-width:140px;">
+                    <h2>Welcome!</h2>
+                </div>
+
+            </div>
+        </div>
+        <asp:ContentPlaceHolder id="content_area" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <div class="footer">
+        <h4><span class="change"><a href="Default.aspx"><span id="easy">Easy</span> <span id="eng">Engineering</span> <span id="acad">Academy</span></a> </span></h4>
+        <h5 >keep learning! keep growing! </h5>
+        <div>
+            <h5 title="contact: 8979879053"id="progress"><u>developed by:MK Team</u></h5>
+        </div>
+    </div>
+               
+</body>
+</html>
